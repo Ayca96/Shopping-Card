@@ -1,9 +1,9 @@
 
-# Shopping Card
+# Shopping Cart
 
 ## Description
 
-Project aims to create a Shopping Card App.
+Project aims to create a Shopping Cart App.
 
 
 ## Project Skeleton
