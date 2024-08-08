@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #f1f2b5;
+  /* background: -webkit-linear-gradient(to right, #135058, #f1f2b5);
+  background: linear-gradient(to right, #135058, #f1f2b5); */
+}
+
+.navbar{
+  background-color: #999A6F;
+}
+ 
+.back, .backfoto{
+  background-image: url(./assets/shopping-mall-1416502_1920.jpg);
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  height: 100vh;
+}
+
+.backfoto{
+  background-image: url(./assets/shopping-mall-1416502_1920.jpg);
+ 
+}
+
+.main {
+  background: url(./assets/shopping-mall-1416500_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  min-height: calc(100vh - 60px);
+  position: relative;
+  > div {
+    /* border:2px solid red; */
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    .main-buttons {
+      margin-top: 1rem;
+    }
+  }
+}
+.nav-link {
+  color: white !important;
+  &:hover {
+    color: #5D839A !important;
+  }
+}
+/* .active {
+  text-decoration: underline !important;
+} */
+
+
+
+.card {
+  border: none;
+
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #f1f2b5;
+  /* transform: scaleY(1); */
+  transition: all 0.5s;
+  transform-origin: bottom;
+}
+
+.card:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #135058;
+  transform: scaleY(0);
+  transition: all 0.5s;
+  transform-origin: bottom;
+}
+
+.card:hover::after {
+  transform: scaleY(1);
+}
+
+.fonts {
+  font-size: 20px;
+  color: white;
+}
+/* about sayfasındaki iconlar */
+.social-list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+}
+
+.social-list li {
+  padding: 10px;
+  color: #BBA486;
+  font-size: 19px;
+}
+/* main deki button */
+.main-buttons button:nth-child(1) {
+  border: 1px solid #999A6F !important;
+  background-color: #999A6F;
+  color: black;
+  height: 40px;
+}
+.main-buttons button:nth-child(1):hover {
+  border: 1px solid #BBA486 !important;
+  color: #fff;
+  height: 40px;
+  background-color: #BBA486;
+}
+
+
+/* about taki butonlar */
+
+.buttons button:nth-child(1) {
+  border: 1px solid #BBA486 !important;
+  color: #BBA486;
+  height: 40px;
+}
+
+.buttons button:nth-child(1):hover {
+  border: 1px solid #BBA486 !important;
+  height: 40px;
+  background-color: #BBA486;
+  & a {
+    color: #fff !important;
+  }
+}
+
+.buttons button:nth-child(2) {
+  border: 1px solid #BBA486 !important;
+  background-color: #BBA486;
+  color: #fff;
+  height: 40px;
+}
+
+.main-buttons button:nth-child(2) {
+  border: 1px solid #999A6F!important;
+  background-color: #999A6F;
+  color: #fff;
+  height: 40px;
+}
+
+.fotom{
+  background-image: url(./assets/shopping-mall-1126485_1920.jpg);
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  height: 100vh;
+}
+
+.aboutback{
+  background-color: rgba(0, 0, 0, .6)!important;
+}
