@@ -37,7 +37,7 @@ SOLUTION
 
 ## Expected Outcome
 
-![Shopping Cart](./src/assets/chrome-capturee-2024-8-8.gif)
+![Shopping Cart](./src/assets/chrome-capture-2024-8-9.gif)
 
 ## Objective
 
