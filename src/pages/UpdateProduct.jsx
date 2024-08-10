@@ -1,22 +1,58 @@
-import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate, useParams} from "react-router-dom";
 import axios from "axios"
 
 
 
 const UpdateProduct = () => {
-
-
-
+  //! 1.yol başlangıç********
+  const { id } = useParams();
+  const BASE_URL = "https://63f4e5583f99f5855db9e941.mockapi.io/products";
+ 
+ const[yeniVeri,setYeniVeri]=useState({})
+ 
+   const getData = async () => {
+    
+       const { data } = await axios(`${BASE_URL}/${id}`);
+       setYeniVeri(data);
+     
+   };
+ 
+   useEffect(() => {
+     getData();
+   }, []);
+ //! 1.yol bitiş
+ 
+   //!2.yol başlangıç********
+ // const{state:{urun}}=useLocation()
+ 
+ 
+ // console.log(urun);
+ // const[yeniVeri,setYeniVeri]=useState(urun)
+ //! 2.yol bitiş*********
+ 
+  const navigate=useNavigate()
+ 
+ const handleSubmit=async(e)=>{
+ e.preventDefault()
+ 
+ await axios.put(
+   `https://63f4e5583f99f5855db9e941.mockapi.io/products/${yeniVeri.id}`, yeniVeri
+ );
+ navigate(-1)
+ 
+ }
+ 
+ 
   return (
     <div className="container">
       <article
         name="add-product"
         className="mb-4 mt-4 col col-lg-6 mx-auto border rounded-2 bg-opacity-50 bg-light"
       >
-        <h1 className="text-center">update Product</h1>
+        <h1 className="text-center">Update Product</h1>
 
-        <form  className="p-2">
+        <form onSubmit={handleSubmit} className="p-2">
           <div className="mb-3">
             <label htmlFor="add-name" className="form-label">
               Product Name
@@ -25,7 +61,8 @@ const UpdateProduct = () => {
               type="text"
               className="form-control"
               name="name"
-              value={""}
+              onChange={(e)=>setYeniVeri({...yeniVeri, name:e.target.value})}
+              value={yeniVeri.name}
               
               required
             />
@@ -38,7 +75,8 @@ const UpdateProduct = () => {
               type="number"
               className="form-control"
               name="price"
-              value={""}
+              onChange={(e)=>setYeniVeri({...yeniVeri, price:e.target.value})}
+              value={yeniVeri.price}
               required
             
             />
@@ -51,7 +89,8 @@ const UpdateProduct = () => {
               type="number"
               className="form-control"
               name="amount"
-              value={""}
+              onChange={(e)=>setYeniVeri({...yeniVeri, amount:e.target.value})}
+              value={yeniVeri.amount}
               required
             
             />
@@ -67,7 +106,8 @@ const UpdateProduct = () => {
               type="url"
               className="form-control"
               name="image"
-              value={""}
+              onChange={(e)=>setYeniVeri({...yeniVeri, image:e.target.value})}
+              value={yeniVeri.image}
               aria-describedby="basic-addon3"
               required
             
