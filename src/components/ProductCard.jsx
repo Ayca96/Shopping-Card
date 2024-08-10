@@ -1,8 +1,11 @@
 import React from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 // parseFloat=kullanıcı tam sayı bile girse virgüllü sayıya çevirir,ekrana öyle basar
 const ProductCard = ({ urun, getData }) => {
   const { id, name, image, price, dampingRate, amount } = urun;
+
+  const navigate=useNavigate()
 
   const BASE_URL = "https://63f4e5583f99f5855db9e941.mockapi.io/products";
 
@@ -35,6 +38,10 @@ const ProductCard = ({ urun, getData }) => {
             className="w-100 h-100 rounded-start"
             alt={"name"}
             title={""}
+           // 1.yolun navigate i useParams
+            onClick={() => navigate(`/updateproduct/${id}`)}
+              // 2.yol un navigate i useLocation
+            //  onClick={()=>navigate("/update-product", {state:{urun}})}
           />
         </div>
         <div className="col-md-7">
